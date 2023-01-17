@@ -1,5 +1,3 @@
-//db.js
-
 var mongoose = require('mongoose');
 
 var connection = mongoose.connect('mongodb+srv://Admin:Admin@sitefilmes.rrnynrp.mongodb.net/SiteFilmes?retryWrites=true&w=majority', { useNewUrlParser: true }).then(() => {
