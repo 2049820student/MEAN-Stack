@@ -1,0 +1,21 @@
+<!--filme.html-->
+
+<h2>Lista de Filmes</h2>
+
+<table class="table" ng-if="filmes.length>0">
+    <tr>
+<!--        <th>ID</th>-->
+        <th>Nome</th>
+    </tr>
+    <tr ng-repeat="filme in filmes">
+<!--        <td>{{filme._id}}</td>-->
+        <td>{{filme.nome}}</td>
+        <td>
+            <a class="btn btn-warning" ui-sref="edit({_id:filme._id})">Edit</a>
+            <button class="btn btn-danger" ng-click="deleteFilme(filme._id)">Delete</button>
+        </td>
+    </tr>
+</table>
+<div ng-if="filmes.length==0">
+    No record found !!
+</div>

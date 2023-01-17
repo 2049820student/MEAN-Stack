@@ -1,0 +1,35 @@
+<h2 ng-show="filme._id!=null">Edit</h2>
+<h2 ng-hide="filme._id!=null">Create</h2>
+
+<hr>
+<form name="filmeForm" ng-submit="saveData(filme)" novalidate class="form-horizontal">
+    <div class="form-group">
+        <label class="col-md-2">Nome do Filme</label>
+        <div class="col-md-10">
+            <input type="text" ng-model="filme.nome" name="nome" ng-required="true" class="form-control"/>
+            <p ng-show="filmeForm.nome.$error.required && (filmeForm.$submitted || filmeForm.nome.$dirty)" class="text-danger">Please Enter Name</p>
+        </div>
+    </div>
+
+<!--    <div class="form-group">-->
+<!--        <label class="col-md-2">Descrição do Filme</label>-->
+<!--        <div class="col-md-10">-->
+<!--            <textarea name="descricao" ng-model="filme.descricao" ng-required="true" class="form-control"></textarea>-->
+<!--            <p ng-show="filmeForm.address.$error.required && (filmeForm.$submitted || filmeForm.address.$dirty)" class="text-danger">Please Enter Address</p>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label class="col-md-2">Contact No.</label>-->
+<!--        <div class="col-md-10">-->
+<!--            <input type="text" ng-model="filme.contactNo" name="contactNo" ng-required="true" class="form-control"/>-->
+<!--            <p ng-show="filmeForm.contactNo.$error.required && (filmeForm.$submitted || filmeForm.contactNo.$dirty)" class="text-danger">Please Enter Contact No.</p>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Update" class="btn btn-primary" ng-show="filme._id!=null"/>
+            <input type="submit" value="Save" class="btn btn-primary" ng-hide="filme._id!=null"/>
+            <a ui-sref="filmes" class="btn btn-warning">Cancel</a>
+        </div>
+    </div>
+</form>
