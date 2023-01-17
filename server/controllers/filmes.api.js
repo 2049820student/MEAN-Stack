@@ -1,16 +1,16 @@
+//filmes.api.js
+
 var express = require("express"),
     router = express.Router(),
     filme = require("../models/filme.js");
 
-router.get('/', (req, res) => {
-    filme.find({}, (error, filmes) => {
-        if (error) {
-            console.log(`Error: ${error}`);
-            res.json({ success: false, message: `Failed to load all filmes. Error: ${error}` });
-        } else {
-            console.log(`Filmes: ${filmes}`);
-            res.render('filmes', { filmes: filmes });
+router.get("/", function(req, res) {
+    filme.find({}, function(err, data) {
+        if (err) {
+            res.send("error");
+            return;
         }
+        res.send(data);
     });
 });
 
