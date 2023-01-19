@@ -38,7 +38,6 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             controller: "peopleController"
         })
 
-
         //Diretor
         .state('creatediretor', {
             url: '/creatediretor',
@@ -49,7 +48,6 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "/views/creatediretor.html",
             controller: "peopleController"
         })
-
 
 
 
