@@ -1,0 +1,48 @@
+<div class="PeopleMainBox">
+    <div class="PeopleBox">
+        <h2>Atores</h2>
+        <div>
+            <table class="table" ng-if="atores.length>0">
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th><button class="btn btn-primary" ui-sref="createator">Create</button></th>
+                </tr>
+
+                <tr ng-repeat="ator in atores">
+                    <td>{{ator.nome}}</td>
+                    <td>{{ator.idade}}</td>
+                    <td>
+                        <a class="btn btn-warning" ui-sref="editator({_id:ator._id})">Edit</a>
+                        <button class="btn btn-danger" ng-click="deleteAtor(ator._id)">Delete</button>
+                    </td>
+                </tr>
+            </table>
+            <div ng-if="atores.length==0">
+                No record found !!
+            </div>
+        </div>
+    </div>
+
+    <div class="PeopleBox">
+        <h2>Diretores</h2>
+        <table class="table" ng-if="diretores.length>0">
+            <tr>
+                <th>Nome</th>
+                <th>Idade</th>
+                <th><button class="btn btn-primary" ui-sref="creatediretor">Create</button></th>
+            </tr>
+            <tr ng-repeat="diretor in diretores">
+                <td>{{diretor.nome}}</td>
+                <td>{{diretor.idade}}</td>
+                <td>
+                    <a class="btn btn-warning" ui-sref="editdiretor({_id:diretor._id})">Edit</a>
+                    <button class="btn btn-danger" ng-click="deleteDiretor(diretor._id)">Delete</button>
+                </td>
+            </tr>
+        </table>
+        <div ng-if="diretores.length==0">
+            No record found !!
+        </div>
+    </div>
+</div>

@@ -12,14 +12,14 @@ router.get("/", function(req, res) {
     });
 });
 
-router.get("/:_id", function(req, res) {
-    var id = req.params._id;
-    filme.find({ id }, function(err, data) {
+router.get("/:id", function(req, res) {
+    var id = req.params.id;
+    filme.find({ _id: id }, function(err, data) {
         if (err) {
             res.send("error");
             return;
         }
-        res.send(data);
+        res.send(data[0]);
     });
 });
 
@@ -31,15 +31,21 @@ router.post("/", function(req, res) {
             res.send("error");
             return;
         }
-        res.send("Filme criado com sucesso");
+        res.send("created");
     });
 });
 
-router.post("/:_id", function(req, res) {
-    var id = req.params._id;
+router.post("/:id", function(req, res) {
+    var id = req.params.id;
     var obj = req.body;
 
-    filme.findByIdAndUpdate(id, obj, function(err) {
+    filme.findByIdAndUpdate(id, {
+            nome: obj.nome,
+            descricao: obj.descricao,
+            data_lancamento: obj.data_lancamento,
+            idioma: obj.idioma,
+        },
+        function(err) {
             if (err) {
                 res.send("error");
                 return;
@@ -48,14 +54,14 @@ router.post("/:_id", function(req, res) {
         });
 });
 
-router.delete("/:_id", function(req, res) {
-    var id = req.params._id;
-    filme.findByIdAndRemove(id, function(err, data) {
+router.delete("/:id", function(req, res) {
+    var id = req.params.id;
+    filme.findByIdAndRemove(id, function(err) {
         if (err) {
             res.send("error");
             return;
         }
-        res.send(data);
+        res.send("deleted");
     });
 });
 

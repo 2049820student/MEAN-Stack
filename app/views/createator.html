@@ -1,0 +1,29 @@
+<h2 ng-show="ator._id!=null">Edit</h2>
+<h2 ng-hide="ator._id!=null">Create</h2>
+
+<hr>
+<form name="atorForm" ng-submit="saveData(ator)" novalidate class="form-horizontal">
+  <div class="form-group">
+    <label class="col-md-2">Nome do Ator</label>
+    <div class="col-md-10">
+      <input type="text" ng-model="ator.nome" name="nome" ng-required="true" class="form-control"/>
+      <p ng-show="atorForm.nome.$error.required && (atorForm.$submitted || atorForm.nome.$dirty)" class="text-danger">Please Enter Name</p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="col-md-2">Idade do Ator</label>
+    <div class="col-md-10">
+      <textarea name="idade" ng-model="ator.idade" ng-required="true" class="form-control"></textarea>
+      <p ng-show="atorForm.idade.$error.required && (atorForm.$submitted || atorForm.idade.$dirty)" class="text-danger">Please Enter </p>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-offset-2 col-md-10">
+      <input type="submit" value="Update" class="btn btn-primary" ng-show="ator._id!=null"/>
+      <input type="submit" value="Save" class="btn btn-primary" ng-hide="ator._id!=null"/>
+      <a ui-sref="verpeople" class="btn btn-warning">Cancel</a>
+    </div>
+  </div>
+</form>

@@ -1,19 +1,19 @@
+//app.js
+
 var routerApp = angular.module('routerApp', ['ui.router']);
 
 
 routerApp.config(function($stateProvider, $urlRouterProvider) {
-    
-    $urlRouterProvider.otherwise('/home');
-    
+
+    $urlRouterProvider.otherwise('/filmes');
+
     $stateProvider
-		.state('create', {
+        //Filmes
+        .state('create', {
             url: '/create',
-			templateUrl: '/views/create.html',
+            templateUrl: '/views/create.html',
             controller: 'filmeController'
-        }).state('home', {
-            url: '/home',
-            templateUrl: '/views/index.html'
-        }).state('filmes', {
+        }).state('verfilmes', {
             url: '/filmes',
             templateUrl: '/views/filmes.html',
             controller: 'filmeController'
@@ -21,11 +21,43 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             url: "/edit/:_id",
             templateUrl: "/views/create.html",
             controller: "filmeController"
-        }).state("contact", {
+        })
+
+        //Atores
+        .state('createator', {
+            url: '/createator',
+            templateUrl: '/views/createator.html',
+            controller: 'peopleController'
+        }).state('verpeople', {
+            url: '/people',
+            templateUrl: '/views/people.html',
+            controller: 'peopleController'
+        }).state("editator", {
+            url: "/editator/:_id",
+            templateUrl: "/views/createator.html",
+            controller: "peopleController"
+        })
+
+
+        //Diretor
+        .state('creatediretor', {
+            url: '/creatediretor',
+            templateUrl: '/views/creatediretor.html',
+            controller: 'peopleController'
+        }).state("editdiretor", {
+            url: "/editdiretor/:_id",
+            templateUrl: "/views/creatediretor.html",
+            controller: "peopleController"
+        })
+
+
+
+
+       .state("contact", {
             url: "/contact",
-            templateUrl: "/views/contact.html",
+            templateUrl: "/views/contact.html"
         });
-        
+
 }).constant("globalConfig", {
     apiAddress: 'http://localhost:3000/api'
 });

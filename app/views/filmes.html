@@ -4,10 +4,16 @@
     <tr>
 <!--        <th>ID</th>-->
         <th>Nome</th>
+        <th>Descrição</th>
+        <th>Data de lançamento</th>
+        <th>Idioma</th>
     </tr>
     <tr ng-repeat="filme in filmes">
 <!--        <td>{{filme._id}}</td>-->
         <td>{{filme.nome}}</td>
+        <td>{{filme.descricao}}</td>
+        <td>{{filme.data_lancamento}}</td>
+        <td>{{filme.idioma}}</td>
         <td>
             <a class="btn btn-warning" ui-sref="edit({_id:filme._id})">Edit</a>
             <button class="btn btn-danger" ng-click="deleteFilme(filme._id)">Delete</button>

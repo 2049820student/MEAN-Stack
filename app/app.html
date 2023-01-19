@@ -22,6 +22,7 @@
 
     <script src="app.js"></script>
     <script src="controllers/filmeController.js"></script>
+    <script src="controllers/peopleController.js"></script>
 </head>
 
  <body ng-app="routerApp">
@@ -36,11 +37,10 @@
          <div class="collapse navbar-collapse" id="navbarResponsive">
              <ul class="navbar-nav ml-auto">
                  <li class="nav-item">
-                     <a class="nav-link" ui-sref="home" ui-sref-active="active">Home
-                     </a>
+                     <a class="nav-link" ui-sref="verfilmes" ui-sref-active="active">Filmes</a>
                  </li>
                  <li class="nav-item">
-                     <a class="nav-link" ui-sref="filmes" ui-sref-active="active">Filmes</a>
+                     <a class="nav-link" ui-sref="verpeople" ui-sref-active="active">People</a>
                  </li>
                  <li class="nav-item">
                      <a class="nav-link" ui-sref="create" ui-sref-active="active">Create</a>
@@ -68,11 +68,9 @@
      </div>
      <!-- /.container -->
  </footer>
-		
 		  <!-- Bootstrap core JavaScript -->
     <script src="assets/vendor/jquery/jquery.min.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="app.js"></script>
 
   </body>
 </html>

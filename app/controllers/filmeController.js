@@ -1,3 +1,5 @@
+//filmeController.js
+//var routerApp = angular.module('routerApp', ['ui.router','ngResource']);
 routerApp.controller('filmeController', function($scope, $http, $state, $stateParams, globalConfig) {
 
     $scope.saveData = function(filme)
@@ -6,7 +8,7 @@ routerApp.controller('filmeController', function($scope, $http, $state, $statePa
         {
             $http({
                 method: "POST",
-                url: globalConfig.apiAddress + "/api/filmes",
+                url: globalConfig.apiAddress + "/filmes",
                 data: filme,
             }).then(function mySuccess(response) {
                 alert('CRIADO COM SUCESSO');
@@ -23,14 +25,14 @@ routerApp.controller('filmeController', function($scope, $http, $state, $statePa
                 url: globalConfig.apiAddress + "/filmes/" + $stateParams._id,
                 data: filme,
             }).then(function mySuccess(response) {
-                $state.go("filmes");
+                $state.go("verfilmes");
             }, function myError(response) {
 
             });
         }
     };
 
-    if ($state.current.name === 'filmes')
+    if ($state.current.name === 'verfilmes')
     {
         $http({
             method : "GET",
