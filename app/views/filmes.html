@@ -2,14 +2,12 @@
 
 <!--<table class="table" ng-if="filmes.length>0">-->
 <!--    <tr>-->
-<!--        <th>Imagem</th>-->
 <!--        <th>Nome</th>-->
 <!--        <th>Descrição</th>-->
 <!--        <th>Data de lançamento</th>-->
 <!--        <th>Idioma</th>-->
 <!--    </tr>-->
 <!--    <tr ng-repeat="filme in filmes">-->
-<!--        <th><img src="{{filme.imagem}}" alt="image"></th>-->
 <!--        <td>{{filme.nome}}</td>-->
 <!--        <td>{{filme.descricao}}</td>-->
 <!--&lt;!&ndash;        formato de data (sem as horas)&ndash;&gt;-->
@@ -26,7 +24,7 @@
 <!--    No record found !!-->
 <!--</div>-->
 
-<h2>Lista de Filmes</h2>
+<h2>Filmes</h2>
 
 <div class="container">
     <div class="row">
@@ -35,8 +33,8 @@
                 <img class="card-img-top" ng-src="{{filme.imagem}}" alt="{{filme.nome}}">
                 <div class="card-body">
                     <h5 class="card-title">{{filme.nome}}</h5>
-                    <a class="card-text2">{{filme.descricao}}</a>
-                    <a class="card-text">{{filme.idioma}}</a>
+                    <a class="card-text">{{filme.descricao}}</a>
+                    <p class="card-text">{{filme.idioma}}</p>
                     <p class="card-text">{{filme.data_lancamento | date:'dd/MM/yyyy'}}</p>
 
                     <a class="btn btn-warning" ui-sref="edit({_id:filme._id})">Edit</a>
@@ -46,6 +44,7 @@
         </div>
     </div>
 </div>
+
 
 
 

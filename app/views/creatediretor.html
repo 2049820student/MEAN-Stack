@@ -2,7 +2,7 @@
 <h2 ng-hide="diretor._id!=null">Create</h2>
 
 <hr>
-<form name="diretorForm" ng-submit="saveData(diretor)" novalidate class="form-horizontal">
+<form name="diretorForm" ng-submit="saveDiretor(diretor)" novalidate class="form-horizontal">
   <div class="form-group">
     <label class="col-md-2">Nome do Diretor</label>
     <div class="col-md-10">
@@ -14,7 +14,7 @@
   <div class="form-group">
     <label class="col-md-2">Idade do Diretor</label>
     <div class="col-md-10">
-      <textarea name="idade" ng-model="diretor.idade" ng-required="true" class="form-control"></textarea>
+      <input type="number" max="100" min="0" name="idade" ng-model="diretor.idade" ng-required="true" class="form-control"></input>
       <p ng-show="diretorForm.idade.$error.required && (diretorForm.$submitted || diretorForm.idade.$dirty)" class="text-danger">Please Enter </p>
     </div>
   </div>

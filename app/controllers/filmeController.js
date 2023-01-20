@@ -1,29 +1,32 @@
 //filmeController.js
-//var routerApp = angular.module('routerApp', ['ui.router','ngResource']);
 routerApp.controller('filmeController', function($scope, $http, $state, $stateParams, globalConfig) {
 
-    $scope.saveData = function(filme)
-    {
-        if ($state.current.name === 'create')
-        {
+    $scope.saveData = function(filme) {
+        var newFilme = {
+            nome: filme.nome,
+            descricao: filme.descricao,
+            data_lancamento: filme.data_lancamento,
+            idioma: filme.idioma,
+            imagem: filme.imagem,
+            avaliacao: filme.avaliacao
+        }
+        newFilme.avaliacao = filme.avaliacao;
+
+        if ($state.current.name === 'create') {
             $http({
                 method: "POST",
                 url: globalConfig.apiAddress + "/filmes",
-                data: filme,
+                data: newFilme,
             }).then(function mySuccess(response) {
                 alert('CRIADO COM SUCESSO');
-                // $state.go("filmes");
             }, function myError(response) {
                 alert('ERRO AO CRIAR');
             });
-        }
-
-        else if ($state.current.name === 'edit')
-        {
+        } else if ($state.current.name === 'edit') {
             $http({
                 method: "POST",
                 url: globalConfig.apiAddress + "/filmes/" + $stateParams._id,
-                data: filme,
+                data: newFilme,
             }).then(function mySuccess(response) {
                 $state.go("verfilmes");
             }, function myError(response) {
@@ -31,6 +34,7 @@ routerApp.controller('filmeController', function($scope, $http, $state, $statePa
             });
         }
     };
+
 
     if ($state.current.name === 'verfilmes')
     {
@@ -70,3 +74,4 @@ routerApp.controller('filmeController', function($scope, $http, $state, $statePa
     };
 
 });
+

@@ -54,9 +54,9 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
         })
         // ----------------------------------------------
 
-       .state("contact", {
-            url: "/contact",
-            templateUrl: "/views/contact.html"
+       .state("login", {
+            url: "/login",
+            templateUrl: "/views/login.html"
         });
 
 }).constant("globalConfig", {

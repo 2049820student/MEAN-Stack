@@ -2,7 +2,7 @@ routerApp.controller('peopleController', function($scope, $http, $state, $stateP
 
     //------------------Atores---------------------
 
-    $scope.saveData = function(ator)
+    $scope.saveAtor = function(ator)
     {
         if ($state.current.name === 'createator')
         {
@@ -76,7 +76,7 @@ routerApp.controller('peopleController', function($scope, $http, $state, $stateP
 
 
 
-    $scope.saveData = function(diretor)
+    $scope.saveDiretor = function(diretor)
     {
         if ($state.current.name === 'creatediretor')
         {
