@@ -44,6 +44,7 @@ router.post("/:id", function(req, res) {
             descricao: obj.descricao,
             data_lancamento: obj.data_lancamento,
             idioma: obj.idioma,
+            imagem: obj.imagem, //test
         },
         function(err) {
             if (err) {

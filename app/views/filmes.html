@@ -1,26 +1,52 @@
+<!--<h2>Lista de Filmes</h2>-->
+
+<!--<table class="table" ng-if="filmes.length>0">-->
+<!--    <tr>-->
+<!--        <th>Imagem</th>-->
+<!--        <th>Nome</th>-->
+<!--        <th>Descrição</th>-->
+<!--        <th>Data de lançamento</th>-->
+<!--        <th>Idioma</th>-->
+<!--    </tr>-->
+<!--    <tr ng-repeat="filme in filmes">-->
+<!--        <th><img src="{{filme.imagem}}" alt="image"></th>-->
+<!--        <td>{{filme.nome}}</td>-->
+<!--        <td>{{filme.descricao}}</td>-->
+<!--&lt;!&ndash;        formato de data (sem as horas)&ndash;&gt;-->
+<!--        <td>{{filme.data_lancamento | date:'dd/MM/yyyy'}}</td>-->
+<!--        <td>{{filme.idioma}}</td>-->
+<!--        <td>-->
+<!--            <a class="btn btn-warning" ui-sref="edit({_id:filme._id})">Edit</a>-->
+<!--            <button class="btn btn-danger" ng-click="deleteFilme(filme._id)">Delete</button>-->
+<!--        </td>-->
+<!--    </tr>-->
+<!--</table>-->
+
+<!--<div ng-if="filmes.length==0">-->
+<!--    No record found !!-->
+<!--</div>-->
+
 <h2>Lista de Filmes</h2>
 
-<table class="table" ng-if="filmes.length>0">
-    <tr>
-<!--        <th>ID</th>-->
-        <th>Nome</th>
-        <th>Descrição</th>
-        <th>Data de lançamento</th>
-        <th>Idioma</th>
-    </tr>
-    <tr ng-repeat="filme in filmes">
-<!--        <td>{{filme._id}}</td>-->
-        <td>{{filme.nome}}</td>
-        <td>{{filme.descricao}}</td>
-        <td>{{filme.data_lancamento}}</td>
-        <td>{{filme.idioma}}</td>
-        <td>
-            <a class="btn btn-warning" ui-sref="edit({_id:filme._id})">Edit</a>
-            <button class="btn btn-danger" ng-click="deleteFilme(filme._id)">Delete</button>
-        </td>
-    </tr>
-</table>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3" ng-repeat="filme in filmes">
+            <div class="card">
+                <img class="card-img-top" ng-src="{{filme.imagem}}" alt="{{filme.nome}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{filme.nome}}</h5>
+                    <a class="card-text2">{{filme.descricao}}</a>
+                    <a class="card-text">{{filme.idioma}}</a>
+                    <p class="card-text">{{filme.data_lancamento | date:'dd/MM/yyyy'}}</p>
 
-<div ng-if="filmes.length==0">
-    No record found !!
+                    <a class="btn btn-warning" ui-sref="edit({_id:filme._id})">Edit</a>
+                    <button class="btn btn-danger" ng-click="deleteFilme(filme._id)">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+
+

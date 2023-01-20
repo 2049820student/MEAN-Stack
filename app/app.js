@@ -23,14 +23,18 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             controller: "filmeController"
         })
 
+
+        // -------------------people--------------------
+        .state('verpeople', {
+            url: '/people',
+            templateUrl: '/views/people.html',
+            controller: 'peopleController'
+        })
+
         //Atores
         .state('createator', {
             url: '/createator',
             templateUrl: '/views/createator.html',
-            controller: 'peopleController'
-        }).state('verpeople', {
-            url: '/people',
-            templateUrl: '/views/people.html',
             controller: 'peopleController'
         }).state("editator", {
             url: "/editator/:_id",
@@ -48,8 +52,7 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: "/views/creatediretor.html",
             controller: "peopleController"
         })
-
-
+        // ----------------------------------------------
 
        .state("contact", {
             url: "/contact",

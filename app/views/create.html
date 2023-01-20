@@ -7,7 +7,7 @@
         <label class="col-md-2">Nome do Filme</label>
         <div class="col-md-10">
             <input type="text" ng-model="filme.nome" name="nome" ng-required="true" class="form-control"/>
-            <p ng-show="filmeForm.nome.$error.required && (filmeForm.$submitted || filmeForm.nome.$dirty)" class="text-danger">Please Enter Name</p>
+            <p ng-show="filmeForm.nome.$error.required && (filmeForm.$submitted || filmeForm.nome.$dirty)" class="text-danger">Insira o nome do filme</p>
         </div>
     </div>
 
@@ -15,23 +15,38 @@
         <label class="col-md-2">Descrição do Filme</label>
         <div class="col-md-10">
             <textarea name="descricao" ng-model="filme.descricao" ng-required="true" class="form-control"></textarea>
-            <p ng-show="filmeForm.descricao.$error.required && (filmeForm.$submitted || filmeForm.descricao.$dirty)" class="text-danger">Please Enter </p>
+            <p ng-show="filmeForm.descricao.$error.required && (filmeForm.$submitted || filmeForm.descricao.$dirty)" class="text-danger">Insira a descrição do filme</p>
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-2">Data de Lançamento</label>
         <div class="col-md-10">
-            <input type="text" ng-model="filme.data_lancamento" name="data_lancamento" ng-required="true" class="form-control"/>
-            <p ng-show="filmeForm.data_lancamento.$error.required && (filmeForm.$submitted || filmeForm.data_lancamento.$dirty)" class="text-danger">Please Enter </p>
+            <input type="date" ng-model="filme.data_lancamento" name="data_lancamento" ng-required="true" class="form-control"/>
+            <p ng-show="filmeForm.data_lancamento.$error.required && (filmeForm.$submitted || filmeForm.data_lancamento.$dirty)" class="text-danger">Insira a data de lançamento</p>
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-2">Idioma</label>
         <div class="col-md-10">
             <input type="text" ng-model="filme.idioma" name="idioma" ng-required="true" class="form-control"/>
-            <p ng-show="filmeForm.idioma.$error.required && (filmeForm.$submitted || filmeForm.idioma.$dirty)" class="text-danger">Please Enter </p>
+            <p ng-show="filmeForm.idioma.$error.required && (filmeForm.$submitted || filmeForm.idioma.$dirty)" class="text-danger">Insira o(s) idioma(s) do filme</p>
         </div>
     </div>
+    <div class="form-group">
+        <label class="col-md-2">Imagem da Capa</label>
+        <a>(URL da imagem)</a>
+        <div class="col-md-10">
+            <input type="url" ng-model="filme.imagem" name="imagem" ng-required="true" class="form-control"/>
+            <p ng-show="filmeForm.imagem.$error.required && (filmeForm.$submitted || filmeForm.imagem.$dirty)" class="text-danger">Insira imagem do filme</p>
+        </div>
+    </div>
+<!--    <div class="form-group">-->
+<!--        <label class="col-md-2">Rating</label>-->
+<!--        <div class="col-md-10">-->
+<!--            <input type="number" min="0" max="10" ng-model="filme.avaliacao" name="avaliacao" ng-required="true" class="form-control"/>-->
+<!--            <p ng-show="filmeForm.avaliacao.$error.required && (filmeForm.$submitted || filmeForm.avaliacao.$dirty)" class="text-danger">Insira a avaliação do filme</p>-->
+<!--        </div>-->
+<!--    </div>-->
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" value="Update" class="btn btn-primary" ng-show="filme._id!=null"/>

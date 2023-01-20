@@ -9,11 +9,12 @@ var filmeSchema = new Schema({
     _id: { type: objectId, auto: true },
     nome: { type: String, required: true },
     descricao: { type: String, required: true },
-    data_lancamento: { type: String, required: true },
+    data_lancamento: { type: Date, required: true },
+    idioma: { type: String, required: true },
+    imagem:{ type: String ,required: false }, // test
     atores: [{ type: Schema.Types.ObjectId, ref: 'atorModel' }],
     diretores: [{ type: Schema.Types.ObjectId, ref: 'diretorModel' }],
-    idioma: { type: String, required: true },
-    avaliacao: [{ type: avaliacaoSchema, required: true}], //tirar [] caso nao queira array
+    avaliacao: [{ type: avaliacaoSchema, required: false}], //tirar [] caso nao queira array
     genero: [{ type: generoSchema, required: true}],
 }, {
     versionKey: false
@@ -22,3 +23,10 @@ var filmeSchema = new Schema({
 var filme = mongoose.model('filmeModel', filmeSchema, 'filmes');
 
 module.exports = filme;
+
+
+//------Habilitação do populate para ir buscar os IDS gerados automaticamente EX:(63c9bbe129113960787a0883)-----
+filmeSchema.pre('find', function() {
+    this.populate('atores');
+    this.populate('diretores');
+});
