@@ -5,7 +5,7 @@ var mongoose = require("mongoose"),
 var atorSchema = new Schema({
     _id: { type: objectId, auto: true },
     nome: { type: String, required: true },
-    idade: { type: String, required: true },
+    idade: { type: Number, required: true },
 }, {
     versionKey: false
 });

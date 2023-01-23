@@ -11,11 +11,11 @@ var filmeSchema = new Schema({
     descricao: { type: String, required: true },
     data_lancamento: { type: Date, required: true },
     idioma: { type: String, required: true },
-    imagem:{ type: String ,required: false }, // test
-    atores: [{ type: Schema.Types.ObjectId, ref: 'atorModel' }],
-    diretores: [{ type: Schema.Types.ObjectId, ref: 'diretorModel' }],
+    imagem:{ type: String ,required: true },
+    atores: [{ type: Schema.Types.ObjectId, ref: 'atorModel', required: false }],
+    diretores: [{ type: Schema.Types.ObjectId, ref: 'diretorModel', required: false }],
     avaliacao: [{ type: avaliacaoSchema, required: false}], //tirar [] caso nao queira array
-    genero: [{ type: generoSchema, required: true}],
+    genero: [{ type: generoSchema, required: false}],
 }, {
     versionKey: false
 });
