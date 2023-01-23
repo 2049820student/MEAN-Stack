@@ -1,4 +1,3 @@
-//filmeController.js
 routerApp.controller('filmeController', function($scope, $http, $state, $stateParams, globalConfig) {
 
     $scope.saveData = function(filme) {
