@@ -52,7 +52,7 @@ routerApp.controller('filmeController', function($scope, $http, $state, $statePa
             method : "GET",
             url : globalConfig.apiAddress + "/filmes/" + $stateParams._id
         }).then(function mySuccess(response) {
-            $scope.filmes = response.data;
+            $scope.filme = response.data;
         }, function myError(response) {
 
         });
@@ -65,10 +65,10 @@ routerApp.controller('filmeController', function($scope, $http, $state, $statePa
             url: globalConfig.apiAddress + "/filmes/" + filme,
             data: filme,
         }).then(function mySuccess(response) {
-            alert('ELIMINADO COM SUCESSO');
+            alert('FILME ELIMINADO COM SUCESSO');
             $state.reload();
         }, function myError(response) {
-            alert('ERRO AO ELIMINAR');
+            alert('ERRO AO ELIMINAR FILME');
         });
     };
 

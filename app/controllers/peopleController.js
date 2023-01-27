@@ -49,7 +49,7 @@ routerApp.controller('peopleController', function($scope, $http, $state, $stateP
             method : "GET",
             url : globalConfig.apiAddress + "/atores/" + $stateParams._id
         }).then(function mySuccess(response) {
-            $scope.atores = response.data;
+            $scope.ator = response.data;
         }, function myError(response) {
 
         });
@@ -123,7 +123,7 @@ routerApp.controller('peopleController', function($scope, $http, $state, $stateP
             method : "GET",
             url : globalConfig.apiAddress + "/diretores/" + $stateParams._id
         }).then(function mySuccess(response) {
-            $scope.diretores = response.data;
+            $scope.diretor = response.data;
         }, function myError(response) {
 
         });
